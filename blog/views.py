@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import redirect, get_object_or_404
-from .models import Post
+from .models import Post, Category, Recipe
 from .forms import PostForm
 
 def post_list(request):
@@ -43,11 +43,10 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
-def about(request):
-    if request.method=='POST':
-        form = ImageUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-           image = about.objects.get(pk=course_id)
-           image.model_pic = form.cleaned_data['image']
-           image.save()
-    return render(request, 'blog/about.html', {'about': about})
+def recipe(request):
+    recipes = Recipe.objects.all()
+    return render(request, 'blog/recipe.html', {'recipes': recipes})
+
+def recipe_detail(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    return render(request, 'blog/recipe_detail.html', {'recipe': recipe})

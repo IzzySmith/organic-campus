@@ -1,0 +1,22 @@
+{% extends 'blog/recipebase.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if recipe.published_date %}
+            <div class="date">
+                {{ recipe.published_date }}
+            </div>
+        {% endif %}
+        <!--
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        -->
+        <h1>{{ recipe.title }}</h1>
+        <p>{{ recipe.number_of_portions }} portions.</p>
+        <h3>Ingredients</h3>
+        {{ recipe.preperation|linebreaks}}
+        <p>Preperation time: {{ recipe.time_for_preparation }} minutes </p>
+        <p>{{ recipe.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

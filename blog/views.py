@@ -16,9 +16,12 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
+            #we save the form
             post = form.save(commit=False)
             post.author = request.user
+            #set default publish date to this timezone
             post.published_date = timezone.now()
+            #save the post
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -38,3 +41,13 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def about(request):
+    if request.method=='POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+           image = about.objects.get(pk=course_id)
+           image.model_pic = form.cleaned_data['image']
+           image.save()
+    return render(request, 'blog/about.html', {'about': about})

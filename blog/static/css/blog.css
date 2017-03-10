@@ -1,6 +1,18 @@
-li .active a {
-    background-color: #ff3333;
+.navbar-default .navbar-nav .active{
+    background: #ff3333;
+    color: #000;
 }
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+      color: #000;
+      background: #ff3333;
+      background: -webkit-linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1));
+ }
 
 .navbar-collapse {
     background: #ff3333; /* For browsers that do not support gradients */    

@@ -41,8 +41,15 @@
 #endbrand {
     text-align: center;
     display: block;
-    margin-left: auto;  
-    margin-right: auto;
+    background-image: url("../img/tplant.jpg"); 
+}
+
+#endbrand h2 {
+   color: #000000;
+}
+
+#endbrand h1 {
+   color: #ffffff;
 }
 
 body  {

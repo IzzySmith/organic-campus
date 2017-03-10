@@ -1,11 +1,29 @@
+li .active a {
+    background-color: #ff3333;
+}
+
+.navbar-collapse {
+    background: #ff3333; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(255,230,230,0), rgba(255,230,230,1)); 
+}
+
+
 #brandwell {
     text-align: center;
     display: block;
     margin-left: auto;  
     margin-right: auto;
     background-image: url("../img/field.jpg"); 
+    position: relative;
     width:100%; 
     height:100%;
+}
+
+#brandwell h1 {
+    color: #ff3333;
 }
 
 #endbrand {
@@ -90,35 +108,4 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-Then surround the HTML code which displays the posts with declarations of classes. Replace this:
-
-blog/templates/blog/post_list.html
-
-{% for post in posts %}
-    <div class="post">
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
-
-in the blog/templates/blog/post_list.html with this:
-
-blog/templates/blog/post_list.html
-
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>published: {{ post.published_date }}</p>
-                    </div>
-                    <h1><a href="">{{ post.title }}</a></h1>
-                    <p>{{ post.text|linebreaksbr }}</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
 

@@ -9,6 +9,7 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
+
     <body>
     <div class="topbar">
     <nav role="navigation" class="navbar navbar-default">
@@ -20,13 +21,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand"><img src="../../static/img/orgcampuslogo.jpg" width="100%" height="100%"></a>
+            <!--
+            <a href="#" class="navbar-brand"><img src="../../static/img/orgcampuslogo.jpg" width="100%" height="100%"></a> 
+             -->
         </div>
         <!-- Collection of nav links, forms, and other content for toggling -->
+        
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><<a href="{% url 'about' %}'">About</a></li>
+                <li><a href="">About</a></li> 
+        
+                <!--
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Recipes<b class="caret"></b></a>
                     <ul role="menu" class="dropdown-menu">
@@ -37,6 +43,7 @@
                         <li><a href="#">some fourth thing</a></li>
                     </ul>
                 </li>
+                -->
             </ul>
             <form role="search" class="navbar-form navbar-left">
                 <div class="form-group">
@@ -45,10 +52,12 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <!-- lets authenticated user add a blog post to home page -->
+                <!--
                 <li>
                 {% if user.is_authenticated %}
                    <a href="{% url 'post_new' %}' class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 {% endif %}
+                -->
                 </li>
             </ul>
         </div>

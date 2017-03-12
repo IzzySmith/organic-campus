@@ -5,7 +5,8 @@
         <h1>{{ recipe.title }}</h1>
         <p>{{ recipe.number_of_portions }} portions.</p>
         <h3>Ingredients</h3>
-        {{ recipe.preperation|linebreaks}}
+        <p>{{ recipe.ingredients }}</p>
+        <p>{{ recipe.preperation|linebreaksbr }}</p>
         <p>Preperation time: {{ recipe.time_for_preparation }} minutes </p>
     </div>
 {% endblock %}

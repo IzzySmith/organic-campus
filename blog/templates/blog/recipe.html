@@ -2,11 +2,7 @@
 {% block content %}
     {% for recipe in recipes %}
         <div class="post">
-            <div class="date">
-                {{ recipe.published_date }}
-            </div>
             <h1><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
-            <p>{{ recipe.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
 {% endblock %}

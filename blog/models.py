@@ -53,7 +53,7 @@ class Recipe(models.Model):
     number_of_portions = models.PositiveIntegerField(u'Number of portions')
     difficulty = models.SmallIntegerField(u'Difficulty',
         choices=DIFFICULTIES, default=DIFFICULTY_MEDIUM)
-    category = models.ManyToManyField(Category, verbose_name=u'Categories')
+   # category = models.ManyToManyField(Category, verbose_name=u'Categories')
     author = models.ForeignKey(User, verbose_name=u'Author')
     date_created = models.DateTimeField(editable=False)
     date_updated = models.DateTimeField(editable=False)
@@ -63,11 +63,9 @@ class Recipe(models.Model):
         verbose_name_plural = u'Recipes'
         ordering = ['-date_created']
 
-    def __unicode__(self):
+    def save(self):
+        self.published_date = timezone.now()
+        self.save()
+    
+    def __str__(self):
         return self.title
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.date_created = timezone.now()
-        self.date_updated = timezone.now()
-        super(Recipe, self).save(*args, **kwargs)

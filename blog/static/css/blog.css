@@ -95,4 +95,12 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
+#brandwell {
+   padding: 50px;
+   background-image: url('../img/salad.jpg');
+   size: cover;
+}
+
+
+
 

@@ -1,5 +1,12 @@
 {% extends 'blog/base.html' %}
 
+{% block nav %}
+                <li id="home" class="active"><a href="{% url 'post_list' %}">Home</a></li>
+                <li id="recipe"><a href="{% url 'recipe' %}">Recipes</a></li> 
+                <li id="contact"><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="" id="order">Order</a></li>
+{% endblock%}
+
 {% block content %}
     <div class="post">
         {% if post.published_date %}

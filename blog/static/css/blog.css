@@ -32,20 +32,26 @@ body  {
 
 .carousel-control.right {
    color: green;
-   background: #ff3333; /* For browsers that do not support gradients */    
-   background: -webkit-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1)); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1)); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1)); /* For Firefox 3.6 to 15 */
+   background: #ff3333; /* For browsers that do not support gradients */  
+   background:rgba(255,255,255,0.8);
+   /*  
+   background: -webkit-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1)); 
+   background: -o-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1)); 
+   background: -moz-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1)); 
    background: linear-gradient(to right, rgba(255,230,230,0), rgba(255,230,230,1)); 
+   */
 }
 
 .carousel-control.left {
    color: green;
    background: #ff3333; /* For browsers that do not support gradients */    
+   background:rgba(255,255,255,0.8);
+   /*
    background: -webkit-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1));
    background: -o-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1)); 
    background: -moz-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1));
    background: linear-gradient(to left, rgba(255,230,230,0), rgba(255, 230,230,1)); 
+   */
 }
 
 .page-header {
@@ -81,7 +87,7 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: red;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
@@ -95,12 +101,64 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-#brandwell {
-   padding: 50px;
+.backdrop {
    background-image: url('../img/salad.jpg');
    size: cover;
+   height: 100vh;
 }
 
+.title {
+   width: 474px;
+   background-color: #FFFFFF;
+   margin: 0 auto;
+   opacity: 0.7;
+}
 
+.brand-before {
+   color: #000000;
+}
 
+.image-logo {
+    display: block; 
+    margin:auto; 
+    /*
+    border: 1px solid;
+    */
+    padding: 20px;
+}
 
+.titleText {
+   color: #000000;
+   font-family: 'Yantramanav', sans-serif;
+   font-weight: bold;
+}
+
+p {
+   color: #000000;
+   font-weight: bold;
+   font-size: 20px;
+   font-family: 'Yantramanav', sans-serif;
+}
+
+p a {
+   color: #000000;
+   font-weight: bold;
+   font-size: 20px;
+   font-family: 'Yantramanav', sans-serif;
+}
+
+.contactButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+   
+.contactButton:hover {
+   background-color: #006600;
+}

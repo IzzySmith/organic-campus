@@ -45,53 +45,30 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-
-def recipe(request):
-    recipe = Recipe.objects.all()
-    return render(request, 'blog/recipe.html', {'recipes': recipe})
+def recipe_list(request):
+    recipes = Recipe.objects.all()
+    return render(request, 'blog/recipe_list.html', {'recipes': recipes})
 
 def recipe_detail(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
-    return render(request, 'blog/recipedetail.html', {'recipe': recipe})
+    return render(request, 'blog/recipe_detail.html', {'recipe': recipe})
 
 def recipe_new(request):
-    if request.method == "POST":
-        form = RecipeForm(request.POST)
-        if form.is_valid():
-            #we save the form
-            recipe = form.save(commit=False)
-            recipe.author = request.user
-            #set default publish date to this timezone
-            recipe.published_date = timezone.now()
-            #save the post
-            recipe.save()
-            return redirect('recipedetail', pk=post.pk)
-    else:
-        form = RecipeForm()
-    return render(request, 'blog/recipe_edit.html', {'form': form})
+    form = RecipeForm()
+    return render(request, 'blog/recipe_edit.html', {'recipe': recipe})
 
 def recipe_edit(request, pk):
-    recipe = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
+    recipe = get_obkect_or_04(Recipe, pk=pk)
+    if request.method == 'POST':
         form = RecipeForm(request.POST, instance=post)
-        if form.is_valid():
-            recipe = form.save(commit=False)
-            recipe.author = request.user
-            recipe.published_date = timezone.now()
-            recipe.save()
-            return redirect('recipedetail', pk=post.pk)
+    if form.is_valid():
+        recipe = form.save(commit=False)
+        recipe.author = request.user
+        recipe.save()
+        return redirect('recipe_detail', pk=recipe.pk)
     else:
         form = RecipeForm(instance=post)
-    return render(request, 'blog/recipe_edit.html', {'form': form})
-
-"""
-def contact(request):
-    form_class=ContactForm
-
-    return render(request, 'blog/contact.html', {
-        'form': form_class,
-})
-"""
+    return render(request, 'recipe_edit.html', {'recipe': recipe})
 
 # our view
 def contact(request):
@@ -133,3 +110,93 @@ def contact(request):
     return render(request, 'blog/contact.html', {
         'form': form_class,
     })
+
+"""
+def recipe(request):
+    recipe = Recipe.objects.all()
+    return render(request, 'blog/recipe.html', {'recipes': recipe})
+
+def recipe_detail(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    return render(request, 'blog/recipedetail.html', {'recipe': recipe})
+
+def recipe_new(request):
+    if request.method == "POST":
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            #we save the form
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            #set default publish date to this timezone
+            recipe.published_date = timezone.now()
+            #save the post
+            recipe.save()
+            return redirect('recipedetail', pk=post.pk)
+    else:
+        form = RecipeForm()
+    return render(request, 'blog/recipe_edit.html', {'form': form})
+
+def recipe_edit(request, pk):
+    recipe = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = RecipeForm(request.POST, instance=post)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            recipe.published_date = timezone.now()
+            recipe.save()
+            return redirect('recipedetail', pk=post.pk)
+    else:
+        form = RecipeForm(instance=post)
+    return render(request, 'blog/recipe_edit.html', {'form': form})
+
+
+def contact(request):
+    form_class=ContactForm
+
+    return render(request, 'blog/contact.html', {
+        'form': form_class,
+})
+
+
+# our view
+def contact(request):
+    form_class = ContactForm
+
+    # new logic!
+    if request.method == 'POST':
+        form = form_class(data=request.POST)
+
+        if form.is_valid():
+            contact_name = request.POST.get(
+                'contact_name'
+            , '')
+            contact_email = request.POST.get(
+                'contact_email'
+            , '')
+            form_content = request.POST.get('content', '')
+
+            # Email the profile with the 
+            # contact information
+            template = get_template('blog/contact_template.txt')
+            context = Context({
+                'contact_name': contact_name,
+                'contact_email': contact_email,
+                'form_content': form_content,
+            })
+            content = template.render(context)
+
+            email = EmailMessage(
+                "New contact form submission",
+                content,
+                "Organic Campus" +'',
+                ['organiccampusauc@gmail.com'],
+                headers = {'Reply-To': contact_email }
+            )
+            email.send()
+            return redirect('contact')
+
+    return render(request, 'blog/contact.html', {
+        'form': form_class,
+    })
+"""

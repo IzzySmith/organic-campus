@@ -31,11 +31,11 @@ class Category(models.Model):
    def __unicode__(self):
        return self.name
 
+"""
 class Recipe(models.Model):
-    """
-    Model to describe a recipe, 
-    also taken from opentechschool.github.io/django101/en/firststeps/app.html
-    """
+   
+    
+   
     DIFFICULTY_EASY = 1
     DIFFICULTY_MEDIUM = 2
     DIFFICULTY_HARD = 3
@@ -44,7 +44,7 @@ class Recipe(models.Model):
         (DIFFICULTY_MEDIUM, u'normal'),
         (DIFFICULTY_HARD, u'hard'),
     )
-    title = models.CharField(u'Title', max_length=255)
+    title = models.CharField('Title', max_length=255)
     ingredients = models.TextField(u'Indigrents',
         help_text=u'One indigrent per line')
     preparation = models.TextField(u'Preparation')
@@ -69,5 +69,29 @@ class Recipe(models.Model):
     
     def __str__(self):
         return self.title
+"""
 
+class Recipe(models.Model):
+    DIFFICULTY_EASY = 'EY'
+    DIFFICULTY_MEDIUM = 'NL'
+    DIFFICULTY_HARD = 'HD'
+    DIFFICULTIES = (
+        (DIFFICULTY_EASY, u'easy'),
+        (DIFFICULTY_MEDIUM, u'normal'),
+        (DIFFICULTY_HARD, u'hard'),
+    )
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=200)
+    ingredients = models.TextField()
+    instructions = models.TextField()
+    difficulty = models.CharField(
+       max_length=2,
+       choices=DIFFICULTIES,
+       default=DIFFICULTY_EASY,
+    )
 
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.title

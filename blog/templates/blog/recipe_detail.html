@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="recipe">}
+        <h1>{{ recipe.title }}</h1>
+        <p>{{ recipe.instructions|linebreaksbr }}</p>
+    </div>
+{% endblock %}

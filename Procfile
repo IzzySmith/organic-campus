@@ -1,1 +1,1 @@
-web: gunicorn organic-campus.wsgi
+web: gunicorn blog.wsgi

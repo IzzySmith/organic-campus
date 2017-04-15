@@ -16,10 +16,11 @@
 	<div style="background:white; width: 75%; margin:auto; text-align: center; height: 100vh;">
 	<h1 class="titleText">Organic   Campus</h1>
 		<p>
-		<a href="{% url 'post_list' %}">Home</a> |
+		<a href="{% url 'home' %}">Home</a> |
+                <a href ="{% url 'post_list' %}">About</a> |
 		<a href="{% url 'recipe' %}">Recipes</a> |
 		<a href="{% url 'contact' %}">Contact</a> |
-		<a href="" id="order">Order</a>
+		<a href="{% url 'order' %}" id="order">Order</a>
 		</p>
 
 

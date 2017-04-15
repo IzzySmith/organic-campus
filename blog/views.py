@@ -7,6 +7,9 @@ from django.core.mail import EmailMessage
 from django.template import Context
 from django.template.loader import get_template
 
+def home(request):
+    return render(request, 'blog/home.html')
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
@@ -72,6 +75,7 @@ def recipe_edit(request, pk):
 
 # our view
 def contact(request):
+
     form_class = ContactForm
 
     # new logic!
@@ -110,6 +114,7 @@ def contact(request):
     return render(request, 'blog/contact.html', {
         'form': form_class,
     })
+"""
 
 """
 def recipe(request):
@@ -199,4 +204,6 @@ def contact(request):
     return render(request, 'blog/contact.html', {
         'form': form_class,
     })
-"""
+
+def order(request):
+    return render(request, 'blog/order.html')

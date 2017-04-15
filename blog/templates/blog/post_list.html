@@ -3,22 +3,18 @@
 
 {% block content %}
 
-
-	<img src="../../static/img/quartlogo.jpg" class="image-logo">         
-
+<h1 class="titleText">ABOUT</h1>
 	
 {% endblock %}
 
 {% block secondpage %}
 
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="href="{% url 'post_detail' pk=recipe.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+    {% for recipe in recipes %}
+        <div class="recipe">
+            <h1 class="titleText"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.instructions|linebreaksbr }}</p>
         </div>
     {% endfor %}
 
 {% endblock %}
+

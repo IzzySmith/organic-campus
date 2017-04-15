@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h3 class="titleText">Contact</h3>
+<form role="form" action="" method="post">
+    <button type="submit" class="contactButton">Submit</button>
+</form>
+{% endblock %}
+
+

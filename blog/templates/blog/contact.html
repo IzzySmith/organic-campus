@@ -6,8 +6,25 @@
 <form role="form" action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="contactButton">Submit</button>
+    <button type="submit" class="contactButton"><a href="mailto:organiccampus@gmail.com?Subject=Web%20Mail">Send</a></button>
 </form>
+
 {% endblock %}
 
+<!--
+
+<h3 class="titleText">Helloooo</h3>
+
+<form action="mailto:organiccampusauc@example.com" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name"><br>
+Cheeseface-E-mail:<br>
+<input type="text" name="mail"><br>
+Comment:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+
+-->
 

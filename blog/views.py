@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import redirect, get_object_or_404
 from .models import Post, Category, Recipe
-from .forms import PostForm, RecipeForm, ContactForm
+from .forms import PostForm, RecipeForm
 from django.core.mail import EmailMessage
 from django.template import Context
 from django.template.loader import get_template
@@ -73,48 +73,7 @@ def recipe_edit(request, pk):
         form = RecipeForm(instance=post)
     return render(request, 'recipe_edit.html', {'recipe': recipe})
 
-# our view
-def contact(request):
 
-    form_class = ContactForm
-
-    # new logic!
-    if request.method == 'POST':
-        form = form_class(data=request.POST)
-
-        if form.is_valid():
-            contact_name = request.POST.get(
-                'contact_name'
-            , '')
-            contact_email = request.POST.get(
-                'contact_email'
-            , '')
-            form_content = request.POST.get('content', '')
-
-            # Email the profile with the 
-            # contact information
-            template = get_template('blog/contact_template.txt')
-            context = Context({
-                'contact_name': contact_name,
-                'contact_email': contact_email,
-                'form_content': form_content,
-            })
-            content = template.render(context)
-
-            email = EmailMessage(
-                "New contact form submission",
-                content,
-                "Organic Campus" +'',
-                ['organiccampusauc@gmail.com'],
-                headers = {'Reply-To': contact_email }
-            )
-            email.send()
-            return redirect('contact')
-
-    return render(request, 'blog/contact.html', {
-        'form': form_class,
-    })
-"""
 
 """
 def recipe(request):
@@ -155,55 +114,11 @@ def recipe_edit(request, pk):
         form = RecipeForm(instance=post)
     return render(request, 'blog/recipe_edit.html', {'form': form})
 
-
+"""
+# the contact view
 def contact(request):
-    form_class=ContactForm
+    return render(request, 'blog/contact.html')
 
-    return render(request, 'blog/contact.html', {
-        'form': form_class,
-})
-
-
-# our view
-def contact(request):
-    form_class = ContactForm
-
-    # new logic!
-    if request.method == 'POST':
-        form = form_class(data=request.POST)
-
-        if form.is_valid():
-            contact_name = request.POST.get(
-                'contact_name'
-            , '')
-            contact_email = request.POST.get(
-                'contact_email'
-            , '')
-            form_content = request.POST.get('content', '')
-
-            # Email the profile with the 
-            # contact information
-            template = get_template('blog/contact_template.txt')
-            context = Context({
-                'contact_name': contact_name,
-                'contact_email': contact_email,
-                'form_content': form_content,
-            })
-            content = template.render(context)
-
-            email = EmailMessage(
-                "New contact form submission",
-                content,
-                "Organic Campus" +'',
-                ['organiccampusauc@gmail.com'],
-                headers = {'Reply-To': contact_email }
-            )
-            email.send()
-            return redirect('contact')
-
-    return render(request, 'blog/contact.html', {
-        'form': form_class,
-    })
-
+#the order view
 def order(request):
     return render(request, 'blog/order.html')

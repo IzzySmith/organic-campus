@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
 
-    <body>
- <div class="backdrop">
-	<div style="background:white; width: 75%; margin:auto; text-align: center; height: 100vh;">
+    <body class="backdrop">
+ <div>
+	<div class="textContainer" id="content">
 	<h1 class="titleText">Organic   Campus</h1>
 		<p>
 		<a href="{% url 'home' %}">Home</a> |
@@ -39,8 +39,6 @@
        {% endblock %}
    </div>
 </div>
-
-
 
     </body>
 </html>

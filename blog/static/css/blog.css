@@ -104,7 +104,11 @@ h1, h2, h3, h4 {
 .backdrop {
    background-image: url('../img/salad.jpg');
    size: cover;
-   height: 100vh;
+}
+
+.offPageBackdrop {
+   background-image: url('../img/salad.jpg');
+   size: cover;
 }
 
 .title {
@@ -161,4 +165,25 @@ p a {
    
 .contactButton:hover {
    background-color: #006600;
+}
+
+.jotform {
+   max-height: 400px;
+}
+
+.textContainer {
+    background:white;
+    width: 75%; 
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    height:100vh;
+}
+
+.unfixedTextContainer {
+    background:white;
+    width: 75%; 
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
 }

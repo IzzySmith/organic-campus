@@ -23,7 +23,7 @@ def post_new(request):
         form = PostForm(request.POST)
         if form.is_valid():
             #we save the form
-            post = form.save(commit=False)
+            post = form.save(commit=True)
             post.author = request.user
             #set default publish date to this timezone
             post.published_date = timezone.now()
@@ -39,7 +39,7 @@ def post_edit(request, pk):
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
-            post = form.save(commit=False)
+            post = form.save(commit=True)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
@@ -61,11 +61,11 @@ def recipe_new(request):
     return render(request, 'blog/recipe_edit.html', {'recipe': recipe})
 
 def recipe_edit(request, pk):
-    recipe = get_obkect_or_04(Recipe, pk=pk)
+    recipe = get_object_or_404(Recipe, pk=pk)
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=post)
     if form.is_valid():
-        recipe = form.save(commit=False)
+        recipe = form.save(commit=True)
         recipe.author = request.user
         recipe.save()
         return redirect('recipe_detail', pk=recipe.pk)

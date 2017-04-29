@@ -5,16 +5,18 @@
 
 
 <h1 class="titleText">RECIPES</h1>
+
+
+    {% for recipe in recipes %}
+        <div class="recipe">
+            <h1 class="titleText"><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
+            <p>{{ recipe.instructions|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 	
 {% endblock %}
 
 {% block secondpage %}
 
-    {% for recipe in recipes %}
-        <div class="recipe">
-            <h1 class="titleTextt"><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
-            <p>{{ recipe.instructions|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
 
 {% endblock %}

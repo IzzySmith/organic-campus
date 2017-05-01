@@ -10,7 +10,7 @@
     {% for recipe in recipes %}
         <div class="recipe">
             <h1 class="titleText"><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
-            <p>{{ recipe.instructions|linebreaksbr }}</p>
+            <p>{{ recipe.category }}</p>
         </div>
     {% endfor %}
 	

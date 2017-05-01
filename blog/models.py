@@ -84,6 +84,11 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200)
     ingredients = models.TextField()
     instructions = models.TextField()
+    category = models.ManyToManyField(Category, verbose_name=u'Categories')
+    figure = models.ImageField(upload_to="static/img",
+                               blank=True,
+                               null=True,
+                               verbose_name="figure")
     difficulty = models.CharField(
        max_length=2,
        choices=DIFFICULTIES,

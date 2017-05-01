@@ -11,5 +11,5 @@ class PostForm(forms.ModelForm):
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ('title', 'instructions')
+        fields = ('title', 'instructions', 'ingredients', 'figure')
 

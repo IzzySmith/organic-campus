@@ -151,6 +151,13 @@ p a {
    font-family: 'Yantramanav', sans-serif;
 }
 
+
+h6 {
+    color: #000000;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Yantramanav', sans-serif;
+}
 .contactButton {
     background-color: #4CAF50; /* Green */
     border: none;

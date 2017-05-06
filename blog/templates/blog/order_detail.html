@@ -5,16 +5,12 @@
 
 <h1 class="titleText">ORDER</h1>
 
-{% for order in orders %}
-     {% autoescape off %} 
-        {{ order.text }}
-     {% endautoescape %}
-{% endfor %}
+
+     {{ order.text }}
+
 
 <script type="text/javascript">
  document.getElementById('content').className = 'unfixedTextContainer';
 </script>
 
 {% endblock %}
-
-

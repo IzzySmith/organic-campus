@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import redirect, get_object_or_404
-from .models import Post, Category, Recipe
+from .models import Post, Category, Recipe, Order
 from .forms import PostForm, RecipeForm
 from django.core.mail import EmailMessage
 from django.template import Context
@@ -115,10 +115,36 @@ def recipe_edit(request, pk):
     return render(request, 'blog/recipe_edit.html', {'form': form})
 
 """
+
+
+
 # the contact view
-def contact(request):
+def contact(request, pk):
     return render(request, 'blog/contact.html')
 
 #the order view
 def order(request):
-    return render(request, 'blog/order.html')
+    orders = Order.objects.all()
+    return render(request, 'blog/order.html', {'orders': orders})
+
+def order_detail(request, pk):
+    order = get_object_or_404(Order, pk=pk)
+    return render(request, 'blog/order_detail.html', {'order': order})
+
+def order_new(request):
+    order = OrderForm()
+    return render(request, 'order/order_edit.html', {'order': order})
+    
+def order_edit(request, pk):
+    order = get_object_or_404(Order, pk=pk)     
+    if request.method == 'POST':
+        form = OrderForm(request.POST, instance=post)
+    if order.is_valid():
+        order = form.save(commit=True)
+        order.author = request.user
+        order.save()
+        return redirect('order_detail', pk=order.pk)
+    else:
+        form = OrderForm(instance=post)
+    return render(request, 'order_edit.html', {'order': order})
+

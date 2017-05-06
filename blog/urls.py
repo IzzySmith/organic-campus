@@ -15,6 +15,9 @@ urlpatterns = [
     url(r'^recipe/(?P<pk>\d+)/edit/$', views.recipe_edit, name='recipe_edit'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^order/$', views.order, name='order'),
+    url(r'^order/(?P<pk>\d+)', views.order_detail, name='order_detail'),
+    url(r'^order/new/$', views.order_new, name='order_new'),
+    url(r'^order/(?P<pk>\d+)/edit/$', views.order_edit, name='order_edit'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

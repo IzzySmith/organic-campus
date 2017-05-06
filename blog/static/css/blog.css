@@ -144,11 +144,12 @@ p {
    font-family: 'Yantramanav', sans-serif;
 }
 
-p a {
+nav-link {
    color: #000000;
    font-weight: bold;
    font-size: 20px;
    font-family: 'Yantramanav', sans-serif;
+   display: inline-block;
 }
 
 
@@ -194,3 +195,59 @@ h6 {
     text-align: center;
     padding: 10px;
 }
+
+/* create dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    background-color: #EEE;
+    list-style: none;
+    position: absolute;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* home brand image link */
+.brand-logo {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    max-width:100px;
+    max-height: 100px;
+}
+
+/* div styling */
+.nav-div {
+    text-align: center;
+    margin: auto;
+}
+
+.nav {
+    list-style: none;
+    /*float: left;*/
+    width: 70%;
+    margin: auto;
+}
+
+.nav li a {
+   color: #000000;
+   font-family: 'Yantramanav', sans-serif;
+   font-weight: bold;
+}
+
+.nav li {
+    /*float: left;*/
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+

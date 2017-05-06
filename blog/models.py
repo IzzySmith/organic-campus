@@ -19,6 +19,14 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Order(models.Model):
+    text = models.TextField()
+    
+    def publish(self):
+        self.save()
+    
+    def __str__(self):
+        return self.text
 
 class Category(models.Model):
    """
@@ -31,45 +39,6 @@ class Category(models.Model):
    def __unicode__(self):
        return self.name
 
-"""
-class Recipe(models.Model):
-   
-    
-   
-    DIFFICULTY_EASY = 1
-    DIFFICULTY_MEDIUM = 2
-    DIFFICULTY_HARD = 3
-    DIFFICULTIES = (
-        (DIFFICULTY_EASY, u'easy'),
-        (DIFFICULTY_MEDIUM, u'normal'),
-        (DIFFICULTY_HARD, u'hard'),
-    )
-    title = models.CharField('Title', max_length=255)
-    ingredients = models.TextField(u'Indigrents',
-        help_text=u'One indigrent per line')
-    preparation = models.TextField(u'Preparation')
-    time_for_preparation = models.IntegerField(u'Preparation time',
-        help_text=u'Time for preperation', blank=True, null=True)
-    number_of_portions = models.PositiveIntegerField(u'Number of portions')
-    difficulty = models.SmallIntegerField(u'Difficulty',
-        choices=DIFFICULTIES, default=DIFFICULTY_MEDIUM)
-   # category = models.ManyToManyField(Category, verbose_name=u'Categories')
-    author = models.ForeignKey(User, verbose_name=u'Author')
-    date_created = models.DateTimeField(editable=False)
-    date_updated = models.DateTimeField(editable=False)
-
-    class Meta:
-        verbose_name = u'Recipe'
-        verbose_name_plural = u'Recipes'
-        ordering = ['-date_created']
-
-    def save(self):
-        self.published_date = timezone.now()
-        self.save()
-    
-    def __str__(self):
-        return self.title
-"""
 
 class Recipe(models.Model):
     DIFFICULTY_EASY = 'EY'

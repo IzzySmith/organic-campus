@@ -29,6 +29,7 @@ body  {
    background-color: #f5f5f5;
    text-align: center;
    margin-top: 0;
+   padding: 0px;
 }
 
 .carousel-inner > .item > img,

@@ -119,7 +119,7 @@ def recipe_edit(request, pk):
 
 
 # the contact view
-def contact(request, pk):
+def contact(request):
     return render(request, 'blog/contact.html')
 
 #the order view

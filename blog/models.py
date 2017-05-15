@@ -41,9 +41,9 @@ class Category(models.Model):
 
 
 class Recipe(models.Model):
-    DIFFICULTY_EASY = 'EY'
-    DIFFICULTY_MEDIUM = 'NL'
-    DIFFICULTY_HARD = 'HD'
+    DIFFICULTY_EASY = 'EASY'
+    DIFFICULTY_MEDIUM = 'MEDIUM'
+    DIFFICULTY_HARD = 'HARD'
     DIFFICULTIES = (
         (DIFFICULTY_EASY, u'easy'),
         (DIFFICULTY_MEDIUM, u'normal'),
@@ -51,6 +51,7 @@ class Recipe(models.Model):
     )
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
+    time = models.IntegerField(blank=True, null=True)
     ingredients = models.TextField()
     instructions = models.TextField()
     category = models.ManyToManyField(Category, verbose_name=u'Categories')

@@ -30,30 +30,6 @@ body  {
     margin: auto;
 }
 
-.carousel-control.right {
-   color: green;
-   background: #ff3333; /* For browsers that do not support gradients */  
-   background:rgba(255,255,255,0.8);
-   /*  
-   background: -webkit-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1)); 
-   background: -o-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1)); 
-   background: -moz-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1)); 
-   background: linear-gradient(to right, rgba(255,230,230,0), rgba(255,230,230,1)); 
-   */
-}
-
-.carousel-control.left {
-   color: green;
-   background: #ff3333; /* For browsers that do not support gradients */    
-   background:rgba(255,255,255,0.8);
-   /*
-   background: -webkit-linear-gradient(right, rgba(255,230,230,0), rgba(255,230,230,1));
-   background: -o-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1)); 
-   background: -moz-linear-gradient(left, rgba(255,230,230,0), rgba(255,230,230,1));
-   background: linear-gradient(to left, rgba(255,230,230,0), rgba(255, 230,230,1)); 
-   */
-}
-
 .page-header {
     background-color: #ff3333;
     margin-top: 0;

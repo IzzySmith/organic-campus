@@ -25,6 +25,12 @@
    color: #ffffff;
 }
 
+/*Paragraph for static page text */
+.paragraph {
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /*Top Bar */
 .headerBar {
@@ -35,7 +41,6 @@
     z-index: 5;
     position: absolute;
     width: 100%;
-    height: 400px;
 }
 
 .carousel-inner > .item > img,

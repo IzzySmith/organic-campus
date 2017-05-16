@@ -122,6 +122,10 @@ def recipe_edit(request, pk):
 def contact(request):
     return render(request, 'blog/contact.html')
 
+#bioromeo
+def bioromeo(request):
+    return render(request, 'blog/bioromeo.html')
+
 #the order view
 def order(request):
     orders = Order.objects.all()

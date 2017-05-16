@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^order/(?P<pk>\d+)', views.order_detail, name='order_detail'),
     url(r'^order/new/$', views.order_new, name='order_new'),
     url(r'^order/(?P<pk>\d+)/edit/$', views.order_edit, name='order_edit'),
+    url(r'^bioromeo/$', views.bioromeo, name='bioromeo'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

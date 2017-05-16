@@ -31,19 +31,19 @@
                  
                 <span class="dropdown">
                 
-                    <a class="nav-link" href ="{% url 'post_list' %}">About</a> 
+                    <a class="nav-link" href ="">About</a> 
                     
                     <div class="dropdown-content">
                     
                     <ul>
                        <li>
-                       <a class="nav-link" href=""><p>Organic Campus</p></a>
+                       <a class="nav-link" href="{% url 'about_us' %}"><p>Organic Campus</p></a>
                        </li>
                        <li>
-                       <a class="nav-link" href=""><p>Bioromeo</p></a>
+                       <a class="nav-link" href="{% url 'bioromeo' %}"><p>Bioromeo</p></a>
                        </li>
                        <li>
-                       <a class="nav-link" href=""><p>Farmers</p></a>
+                       <a class="nav-link" href="{% url 'board' %}"><p>The Board</p></a>
                        </li>
                    </ul>
                 </div>

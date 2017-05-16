@@ -126,6 +126,14 @@ def contact(request):
 def bioromeo(request):
     return render(request, 'blog/bioromeo.html')
 
+#the board
+def board(request):
+    return render(request, 'blog/board.html')
+
+#organic campus
+def about_us(request):
+    return render(request, 'blog/about_us.html')
+
 #the order view
 def order(request):
     orders = Order.objects.all()

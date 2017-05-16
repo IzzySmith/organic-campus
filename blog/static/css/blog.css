@@ -242,6 +242,7 @@ h6 {
     background-color: #EEE;
     list-style: none;
     position: absolute;
+    padding: 12px 14px;
 }
 
 
@@ -280,16 +281,13 @@ h6 {
     margin: auto;
 }
 
-.nav li a {
-   color: #000000;
-   font-family: 'Yantramanav', sans-serif;
-   font-weight: bold;
-}
+
 
 .nav li {
     /*float: left;*/
     display: inline-block;
     margin-right: 10px;
     position: relative;
+    font-size: 20px;
 }
 

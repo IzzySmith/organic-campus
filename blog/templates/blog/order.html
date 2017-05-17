@@ -1,10 +1,13 @@
 {% extends 'blog/base.html' %}
 
 
-{% block content %}
+{% block formtitle %}
 
 <h1 class="titleText">ORDER</h1>
 
+{% endblock %}
+
+{% block form %}
 {% for order in orders %}
      {% autoescape off %} 
         {{ order.text }}

@@ -1,23 +1,117 @@
 {% load staticfiles %}
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http=equiv="X-UA-Compatible" content="IE-edge">
         <title>Organic Campus</title>
+          
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/business-casual.css' %}">   
+
+        <!-- j-query -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- fonts -->
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Yantramanav:100" rel="stylesheet"> 
+
+        <!-- local stylesheet -->
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
 
-    <body class="backdrop">
-<div class="textContainer" id="content">
-     <div class="headerBar">      
-	<h1 class="titleText">Organic  Campus</h1>
-        <a class="nav-link" href="{% url 'home' %}"><img class="brand-logo" src="../../static/img/quartlogo.jpg"/></a>
+
+    <body>
+         
+        <!-- Top Bar -->
+
+        <div class="brand">
+         <a class="nav-link" href="{% url 'home' %}"><img class="brand-logo" src="../../static/img/quartlogo.jpg"/></a>
+         Organic Campus
+        </div>
+
+        <div class="address-bar">Fresh | Local | Organic </div>
 
 <!-- Facebook plugin -->
+        <div class="facebookDiv">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FOrganiccampusauc%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="230" height="100" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </div>
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container" style="width: 1300px;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Fantasy Bakes</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a> 
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{% url 'about_us' %}">About Us</a></li>
+                          <li><a href="{% url 'bioromeo' %}">Bioromeo</a></li>
+                          <li><a href="{% url 'board'%}">The Board</a></li>
+                        </ul>
+                     </li>
+                <!-- put in drop down -->
+                <!-- posts is now events/ blog / news -->
+                <!-- add an events calender? -->         
+
+                <li>
+                <a class="nav-link" href="{% url 'recipe' %}">Recipes</a>
+                </li>
+                <li>
+		<a class="nav-link" href="{% url 'contact' %}">Contact</a> 
+                </li>
+                <li>
+		<a class="nav-link" href="{% url 'order' %}" id="order">Order</a> 
+                </li>
+	    </ul>
+            </div> 
+          </div>
+</nav>
+
+<div class="container">
+<div class="row">
+  
+         <div class="box">
+             <div class="col-lg-12 text-center">
+       {% block content %}
+
+       {% endblock %}
+
+       {% block text %}
+       {% endblock %}
+
+       {% block form %}
+       {% endblock %}
+</div>
+</div>
+</div>
+</div>
+
+   </body>
+</html>
+
+
+<!--
         <div class="facebookDiv">
         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FOrganiccampusauc%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="230" height="100" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
         </div>
@@ -61,29 +155,6 @@
 	    </ul>
             </div> 
           </div>
-
-<div class="contentBlock">
-       {% block content %}
-
-       {% endblock %}
-</div>
-</div>
- </div>
-
-<!--
-<div class="secondPage">
 -->
-
-<div>
-   <div style="background:white; width: 75%; margin:auto; text-align: center;">
-      {% block secondPage %}
-        
-       {% endblock %}
-   </div>
-</div>
-
-   </body>
-</html>
-
 
 

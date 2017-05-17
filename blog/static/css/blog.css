@@ -1,3 +1,8 @@
+body{
+    background: url("../img/veg2.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
 .contentBlock {
     padding: 50px;
     margin-top: 150px;
@@ -28,7 +33,7 @@
 #endbrand {
     text-align: center;
     display: block;
-    background-image: url(""); 
+    background-image: url("../img/salad.jpg"); 
 }
 
 #endbrand h2 {
@@ -104,7 +109,7 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+       font-family: 'Yantramanav', sans-serif;
 }
 
 .date {

@@ -12,7 +12,7 @@
            <div class="recipe">
               <h1 class="titleText"><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
            </div>
-        {% endfor %}
+        {% endif %}
        </div>
     {% endfor %}
 	

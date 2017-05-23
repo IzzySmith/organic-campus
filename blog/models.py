@@ -41,6 +41,18 @@ class Category(models.Model):
 
 
 class Recipe(models.Model):
+    CATEGORY_SOUP = 'SOUP'
+    CATEGORY_PASTA = 'PASTA'
+    CATEGORY_DESSERT = 'DESSERT'
+    CATEGORY_SALAD = 'SALAD'
+    CATEGORY_STEW = 'STEW'
+    CATEGORIES = (
+        (CATEGORY_SOUP, u'soup'),
+        (CATEGORY_PASTA, u'pasta'),
+        (CATEGORY_DESSERT, u'dessert'),
+        (CATEGORY_SALAD, u'salad'),
+        (CATEGORY_STEW, u'stew'),
+    )
     DIFFICULTY_EASY = 'EASY'
     DIFFICULTY_MEDIUM = 'MEDIUM'
     DIFFICULTY_HARD = 'HARD'
@@ -60,11 +72,15 @@ class Recipe(models.Model):
                                null=True,
                                verbose_name="figure")
     difficulty = models.CharField(
-       max_length=2,
+       max_length=6,
        choices=DIFFICULTIES,
        default=DIFFICULTY_EASY,
     )
-
+    categories = models.CharField(
+       max_length=7,
+       choices=CATEGORIES,
+       default=CATEGORY_SOUP,
+    )
     def publish(self):
         self.save()
 

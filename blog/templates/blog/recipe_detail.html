@@ -4,7 +4,7 @@
         <h2 class="intro-text text-center">
           <strong> {{ recipe.title }} </strong>
         </h2>
-        <h3>{{ recipe.category.name }}</h3>
+        <h3>{{ recipe.categories.name }}</h3>
         <h6>{{ recipe.difficulty }}</h6>
         {% if recipe.figure %}
             <div><img style="max-width:150px; max-height:150px;" src=" {{ recipe.figure.url }} "/></div>

@@ -66,7 +66,7 @@ class Recipe(models.Model):
     time = models.IntegerField(blank=True, null=True)
     ingredients = models.TextField()
     instructions = models.TextField()
-    category = models.ManyToManyField(Category, verbose_name=u'Categories')
+    #category = models.ManyToManyField(Category, verbose_name=u'Categories')
     figure = models.ImageField(upload_to="static/img",
                                blank=True,
                                null=True,

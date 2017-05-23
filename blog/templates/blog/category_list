@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+
+<div class="container-fluid">
+  <h1 class="titleText">RECIPES</h1>
+  <p>Select a category below to find recipe ideas</p>
+  <div class="row">
+    <div class="col-sm-4"><a class="nav-link" href="{% url 'recipe_list' %}"><img src="../../static/img/soup.jpg"/></a></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+	
+{% endblock %}
+
+

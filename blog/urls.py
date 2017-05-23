@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^bioromeo/$', views.bioromeo, name='bioromeo'),
     url(r'^board/$', views.board, name='board'),
     url(r'^about_us/$', views.about_us, name='about_us'),
+    url(r'^category_list/$', views.category_list, name='category_list'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

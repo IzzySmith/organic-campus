@@ -4,11 +4,11 @@
 {% block content %}
 
 
-<h1 class="titleText">RECIPES</h1>
+<h1 class="titleText">SOUPS</h1>
 
     {% for recipe in recipes %}
        <div class="">
-        {% if recipe.category == 'soup' %}
+        {% if recipe.categories == "SOUP" %}
            <div class="recipe">
               <h1 class="titleText"><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
            </div>

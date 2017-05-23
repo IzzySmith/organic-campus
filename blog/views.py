@@ -134,6 +134,10 @@ def board(request):
 def about_us(request):
     return render(request, 'blog/about_us.html')
 
+#recipe categories view
+def category_list(request):
+    return render(request, 'blog/category_list.html')
+
 #the order view
 def order(request):
     orders = Order.objects.all()

@@ -18,6 +18,9 @@ body{
 .contentBlock {
     padding: 50px;
     margin-top: 150px;
+}
+
+
 /* the styling for the category images */
 .categoryImg {
     max-width:98%; 
@@ -294,7 +297,7 @@ h6 {
 }
 
 /* home brand image link */
-.brand-logo {
+#brand-logo {
     position: absolute;
     top: 15px;
     left: 50px;

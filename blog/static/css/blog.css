@@ -18,6 +18,18 @@ body{
 .contentBlock {
     padding: 50px;
     margin-top: 150px;
+/* the styling for the category images */
+.categoryImg {
+    max-width:98%; 
+    padding:1%; 
+    background:white;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.categoryImg:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
 }
 
 .pageImgCont {

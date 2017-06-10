@@ -341,3 +341,11 @@ h6 {
     position: relative;
 }
 
+/* Specify height of carousel images */
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+    max-height: 700px;
+}
+

@@ -7,6 +7,7 @@ from django.core.mail import EmailMessage
 from django.template import Context
 from django.template.loader import get_template
 
+#The home view
 def home(request):
     return render(request, 'blog/home.html')
 

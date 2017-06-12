@@ -3,10 +3,10 @@
 
 {% block content %}
 
+     <h1 class="titleText">SOUPS</h1>
     {% for recipe in recipes %}
        <div class="">
         {% if recipe.categories == "SOUP" %}           
-         <h1 class="titleText">SOUPS</h1>
            <div class="recipe">
               <h1 class="titleText"><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h1>
            </div>

@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
-
+#Model for the home page
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
@@ -19,6 +19,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+#model for the order form
 class Order(models.Model):
     text = models.TextField()
     
@@ -39,7 +40,7 @@ class Category(models.Model):
    def __unicode__(self):
        return self.name
 
-
+# model for the recipes
 class Recipe(models.Model):
     CATEGORY_SOUP = 'SOUP'
     CATEGORY_PASTA = 'PASTA'
@@ -86,3 +87,4 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+

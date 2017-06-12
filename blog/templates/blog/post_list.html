@@ -3,24 +3,15 @@
 
 {% block content %}
 
-<h1 class="titleText">ABOUT</h1>
+<h1 class="titleText">NEWS & EVENTS</h1>
 {% for post in posts %}
-    <div class="post">
-        <h1 class="titleText"><a href="{%url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+<h2 class="intro-text text-center">
+          <strong> <a href="{%url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </strong>
+        </h2>
         <p> {{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
 	
 {% endblock %}
 
-{% block secondpage %}
-
-    {% for recipe in recipes %}
-        <div class="recipe">
-            <h1 class="titleText"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.instructions|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-
-{% endblock %}
 
